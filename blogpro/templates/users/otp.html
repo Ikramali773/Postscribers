@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+{% block title %}OTP Verification{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="cover">
+<div class="container ">
+    <div class="row mt-5 pt-5 justify-content-center">
+        <div class="col-md-4 ">
+<div class="card shadow my-3">
+    <div class="card-body">
+        <h4>Verification Page</h4>
+        {% if message %}
+        <div class="alert alert-{{class}}">{{message}}</div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form|crispy }}
+            
+            <input class="btn btn-primary btn-block" type="submit" value="Login">
+            <a href="{% url 'resend' %}">Resend OTP</a>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>  
+</div>  
+{% endblock %}
