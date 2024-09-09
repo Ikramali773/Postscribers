@@ -21,4 +21,4 @@ env/
 *.sublime-project
 *.sublime-workspace
 
-.settings.py
+settings.py
